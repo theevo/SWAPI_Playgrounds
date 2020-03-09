@@ -40,12 +40,12 @@ class SwapiService {
         let endpointURL = url.appendingPathComponent(peopleEndpoint)
         print(endpointURL)
         
-        let finalURL = personURL.appendingPathComponent(String(id))
-        print(finalURL)
+        let personURL = endpointURL.appendingPathComponent(String(id))
+        print(personURL)
         
         // 2 - Contact server
         
-        URLSession.shared.dataTask(with: finalURL) { (data, _, error) in
+        URLSession.shared.dataTask(with: personURL) { (data, _, error) in
             
             // 3. Error Handling
             if let error = error {
@@ -66,6 +66,17 @@ class SwapiService {
             }
             
         }.resume()
+    }
+    
+    static func fetchFilm(url: URL, completion: @escaping (Film?) -> Void) {
+        // 1 - Contact server
+        
+        
+        // 2 - Handle errors
+        
+        // 3 - Check for data
+        
+        // 4 - Decode Film from JSON
     }
 }
 
